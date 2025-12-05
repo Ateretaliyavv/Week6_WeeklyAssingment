@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 /**
- * Handles collecting special tiles (goat, boat, pickaxe)
+ * Handles collecting special tiles (goat, boat, pick)
  * and updates the allowed tiles and the world accordingly.
  */
 public class PlayerTileCollector : MonoBehaviour
@@ -14,16 +14,18 @@ public class PlayerTileCollector : MonoBehaviour
     [Header("Pickup Tiles")]
     [SerializeField] private TileBase goatTile;      //Goat pickup tile
     [SerializeField] private TileBase boatTile;      //Boat pickup tile
-    [SerializeField] private TileBase pickaxeTile;   //Pickaxe pickup tile
+    [SerializeField] private TileBase pickTile;   //Pickaxe pickup tile
 
     [Header("Terrain Tiles")]
     [SerializeField] private TileBase mountainTile;  //Mountain tile (becomes passable after goat)
-    [SerializeField] private TileBase waterTile;     //Water tile (becomes passable after boat)
+    [SerializeField] private TileBase shalowWaterTile;  //Water tile (becomes passable after boat)
+    [SerializeField] private TileBase mediumWaterTile;
+    [SerializeField] private TileBase deepWaterTile;
     [SerializeField] private TileBase grassTile;     //Grass tile (replaces mountain with pickaxe)
 
     private bool hasGoat = false;
     private bool hasBoat = false;
-    private bool hasPickaxe = false;
+    private bool hasPick = false;
 
     private Vector3Int lastCellPosition;
     private bool hasLastCell = false;
@@ -55,7 +57,7 @@ public class PlayerTileCollector : MonoBehaviour
             hasGoat = true;
 
             //Remove the goat tile from the map
-            worldTilemap.SetTile(cellPos, null);
+            worldTilemap.SetTile(cellPos, grassTile);
 
             //Allow crossing mountains
             if (mountainTile != null && allowedTiles != null)
@@ -70,31 +72,37 @@ public class PlayerTileCollector : MonoBehaviour
             hasBoat = true;
 
             //Remove the boat tile from the map
-            worldTilemap.SetTile(cellPos, null);
+            worldTilemap.SetTile(cellPos, grassTile);
 
             //Allow crossing water
-            if (waterTile != null && allowedTiles != null)
-                allowedTiles.AddTile(waterTile);
-
+            if (shalowWaterTile != null && mediumWaterTile != null && deepWaterTile != null && allowedTiles != null)
+            {
+                allowedTiles.AddTile(shalowWaterTile);
+                allowedTiles.AddTile(mediumWaterTile);
+                allowedTiles.AddTile(deepWaterTile);
+            }
             return;
         }
 
-        //Pickaxe pickup
-        if (tile == pickaxeTile)
+        //Pick pickup
+        if (tile == pickTile)
         {
-            hasPickaxe = true;
+            hasPick = true;
 
             //Remove the pickaxe tile from the map
-            worldTilemap.SetTile(cellPos, null);
+            worldTilemap.SetTile(cellPos, grassTile);
+            allowedTiles.AddTile(mountainTile);
 
             return;
         }
 
         //Using pickaxe - turn mountain into grass
-        if (hasPickaxe && tile == mountainTile)
+        if (hasPick && tile == mountainTile)
         {
             if (grassTile != null)
+            {
                 worldTilemap.SetTile(cellPos, grassTile);
+            }
         }
     }
 }
