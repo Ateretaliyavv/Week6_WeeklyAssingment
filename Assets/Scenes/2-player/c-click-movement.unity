@@ -416,6 +416,7 @@ MonoBehaviour:
   maxIterations: 10000
   targetInWorld: {x: 0, y: 0, z: 0}
   targetInGrid: {x: 0, y: 0, z: 0}
+  tilemapGraph: {fileID: 1150217718}
   moveTo:
     m_Name: Move To
     m_Type: 1
@@ -1583,8 +1584,8 @@ Tilemap:
   - first: {x: -2, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1763,8 +1764,8 @@ Tilemap:
   - first: {x: -2, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1773,8 +1774,8 @@ Tilemap:
   - first: {x: -1, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1783,8 +1784,8 @@ Tilemap:
   - first: {x: 0, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2418,13 +2419,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 0230b48a2cd148149bf5502ca7328478, type: 2}
   - m_RefCount: 21
     m_Data: {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
-  - m_RefCount: 51
+  - m_RefCount: 47
     m_Data: {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
   - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: 0cea26e1a47ac8d46850becac1a6c757, type: 2}
   - m_RefCount: 24
     m_Data: {fileID: 11400000, guid: f632ced9123ae5c45b90b0717a7e4eae, type: 2}
-  - m_RefCount: 11
+  - m_RefCount: 15
     m_Data: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
@@ -2439,7 +2440,7 @@ Tilemap:
   - m_RefCount: 21
     m_Data: {fileID: -7529744677577844561, guid: 299760b1974ce5542b0197a9934fddec,
       type: 3}
-  - m_RefCount: 51
+  - m_RefCount: 47
     m_Data: {fileID: 466881852766552214, guid: 299760b1974ce5542b0197a9934fddec, type: 3}
   - m_RefCount: 16
     m_Data: {fileID: 7180856405290789048, guid: 299760b1974ce5542b0197a9934fddec,
@@ -2447,7 +2448,7 @@ Tilemap:
   - m_RefCount: 24
     m_Data: {fileID: 6181676744766947112, guid: 299760b1974ce5542b0197a9934fddec,
       type: 3}
-  - m_RefCount: 11
+  - m_RefCount: 15
     m_Data: {fileID: -6438639898802819283, guid: 299760b1974ce5542b0197a9934fddec,
       type: 3}
   - m_RefCount: 9
@@ -2502,6 +2503,74 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1150217717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150217719}
+  - component: {fileID: 1150217718}
+  m_Layer: 0
+  m_Name: GraphManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1150217718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150217717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e8e3be8cba2ec4ca0c6539d8c2d503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TilemapGraphDijkstra
+  tilemap: {fileID: 931517250}
+  allowedTiles: {fileID: 73550133}
+  deepWaterTile: {fileID: 11400000, guid: ea56eece63aba35469fea812356c7a92, type: 2}
+  mediumWaterTile: {fileID: 11400000, guid: 0230b48a2cd148149bf5502ca7328478, type: 2}
+  shalowWaterTile: {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
+  bushTile: {fileID: 11400000, guid: 0cea26e1a47ac8d46850becac1a6c757, type: 2}
+  grassTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
+  swampTile: {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
+  hillsTile: {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
+  mountainTile: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
+  goatTile: {fileID: 11400000, guid: b54bfd35678456446979dea561ae0eb3, type: 2}
+  boatTile: {fileID: 11400000, guid: a7fee59cfef40ef46a302dba3214e568, type: 2}
+  pickTile: {fileID: 11400000, guid: d3c88f01c998d3e46a195143e7d7195b, type: 2}
+  deepWaterTileWeight: 6
+  mediumWaterTileWeight: 5
+  shalowWaterTileWeight: 4
+  bushTileWeight: 3
+  grassTileWeight: 1
+  swampTileWeight: 2
+  hillsTileWeight: 5
+  mountainTileWeight: 8
+  goatTileWeight: 0
+  boatTileWeight: 0
+  pickTileWeight: 0
+--- !u!4 &1150217719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150217717}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.64386, y: 0.73422, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1819070679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,3 +2685,4 @@ SceneRoots:
   - {fileID: 536966466}
   - {fileID: 790962201}
   - {fileID: 1819070681}
+  - {fileID: 1150217719}

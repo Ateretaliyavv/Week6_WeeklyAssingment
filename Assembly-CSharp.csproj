@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E2F76E65-4F7A-037E-62C5-956D04892D08}</ProjectGuid>
+    <ProjectGuid>{AD0AC9FF-0299-9476-45EC-65F32D3554F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\1-tiles\AllowedTiles.cs" />
+    <Compile Include="Assets\Scripts\0-Dijkstra\Dijkstra.cs" />
     <Compile Include="Assets\Scripts\3-enemies\Patroller.cs" />
     <Compile Include="Assets\Scripts\2-player\ClickMover.cs" />
     <Compile Include="Assets\Scripts\0-bfs\BFS.cs" />
@@ -75,6 +76,8 @@
     <Compile Include="Assets\Scripts\4-generation\MeshRendererCaveGenerator.cs" />
     <Compile Include="Assets\Scripts\3-enemies\EnemyController.cs" />
     <Compile Include="Assets\Scripts\3-enemies\Rotator.cs" />
+    <Compile Include="Assets\Scripts\0-Dijkstra\IWeightedGraph.cs" />
+    <Compile Include="Assets\Scripts\0-Dijkstra\TilemapGraphDijkstra.cs" />
     <Compile Include="Assets\Scripts\2-player\KeyboardMoverByTile.cs" />
     <Compile Include="Assets\Scripts\3-enemies\EnemyControllerStateMachine.cs" />
     <Compile Include="Assets\Scripts\1-tiles\TileLogger.cs" />

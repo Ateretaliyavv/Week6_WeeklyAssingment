@@ -504,9 +504,11 @@ MonoBehaviour:
   allowedTiles: {fileID: 1972678413}
   goatTile: {fileID: 11400000, guid: b54bfd35678456446979dea561ae0eb3, type: 2}
   boatTile: {fileID: 11400000, guid: a7fee59cfef40ef46a302dba3214e568, type: 2}
-  pickaxeTile: {fileID: 11400000, guid: d3c88f01c998d3e46a195143e7d7195b, type: 2}
+  pickTile: {fileID: 11400000, guid: d3c88f01c998d3e46a195143e7d7195b, type: 2}
   mountainTile: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
-  waterTile: {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
+  shalowWaterTile: {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
+  mediumWaterTile: {fileID: 11400000, guid: 0230b48a2cd148149bf5502ca7328478, type: 2}
+  deepWaterTile: {fileID: 11400000, guid: ea56eece63aba35469fea812356c7a92, type: 2}
   grassTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
 --- !u!1 &931517247
 GameObject:

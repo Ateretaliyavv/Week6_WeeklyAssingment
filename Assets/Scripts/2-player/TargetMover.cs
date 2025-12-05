@@ -43,12 +43,16 @@ public class TargetMover : MonoBehaviour
         return targetInWorld;
     }
 
-    private TilemapGraph tilemapGraph = null;
+    [SerializeField] TilemapGraphDijkstra tilemapGraph = null;
     private float timeBetweenSteps;
 
     protected virtual void Start()
     {
-        tilemapGraph = new TilemapGraph(tilemap, allowedTiles.Get());
+        if (speed <= 0f)
+        {
+            Debug.LogError("Speed must be positive");
+            speed = 1f;
+        }
         timeBetweenSteps = 1 / speed;
         MoveTowardsTheTarget();
     }
@@ -69,7 +73,7 @@ public class TargetMover : MonoBehaviour
         if (currentPathInGrid == null || currentPathInGrid[0] != startNode)
         {  // calculate new shortest path
             Vector3Int endNode = targetInGrid;
-            currentPathInGrid = BFS.GetPath(tilemapGraph, startNode, endNode, maxIterations);
+            currentPathInGrid = Dijkstra.GetPath(tilemapGraph, startNode, endNode, maxIterations);
             Debug.Log("new shortestPath = " + string.Join(" , ", currentPathInGrid));
             if (currentPathInGrid.Count == 0)
             {
