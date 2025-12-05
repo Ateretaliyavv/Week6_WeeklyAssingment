@@ -168,6 +168,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
   - {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
   - {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
+  - {fileID: 11400000, guid: b54bfd35678456446979dea561ae0eb3, type: 2}
+  - {fileID: 11400000, guid: a7fee59cfef40ef46a302dba3214e568, type: 2}
+  - {fileID: 11400000, guid: d3c88f01c998d3e46a195143e7d7195b, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +321,7 @@ GameObject:
   - component: {fileID: 790962200}
   - component: {fileID: 790962206}
   - component: {fileID: 790962202}
+  - component: {fileID: 790962207}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -514,6 +518,28 @@ MonoBehaviour:
     m_Flags: 0
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 73550133}
+--- !u!114 &790962207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790962199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddfc806515f92a40a61069145a115f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTileCollector
+  worldTilemap: {fileID: 931517250}
+  allowedTiles: {fileID: 73550133}
+  goatTile: {fileID: 11400000, guid: b54bfd35678456446979dea561ae0eb3, type: 2}
+  boatTile: {fileID: 11400000, guid: a7fee59cfef40ef46a302dba3214e568, type: 2}
+  pickTile: {fileID: 11400000, guid: d3c88f01c998d3e46a195143e7d7195b, type: 2}
+  mountainTile: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
+  shalowWaterTile: {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
+  mediumWaterTile: {fileID: 11400000, guid: 0230b48a2cd148149bf5502ca7328478, type: 2}
+  deepWaterTile: {fileID: 11400000, guid: ea56eece63aba35469fea812356c7a92, type: 2}
+  grassTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
 --- !u!1 &931517247
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,8 +980,8 @@ Tilemap:
   - first: {x: 7, y: -4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 10
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1064,8 +1090,8 @@ Tilemap:
   - first: {x: 0, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2134,8 +2160,8 @@ Tilemap:
   - first: {x: -1, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2419,7 +2445,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 0230b48a2cd148149bf5502ca7328478, type: 2}
   - m_RefCount: 21
     m_Data: {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
-  - m_RefCount: 47
+  - m_RefCount: 44
     m_Data: {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
   - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: 0cea26e1a47ac8d46850becac1a6c757, type: 2}
@@ -2431,6 +2457,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
   - m_RefCount: 19
     m_Data: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a7fee59cfef40ef46a302dba3214e568, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: d3c88f01c998d3e46a195143e7d7195b, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: b54bfd35678456446979dea561ae0eb3, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 14
     m_Data: {fileID: 218079966694919327, guid: 299760b1974ce5542b0197a9934fddec, type: 3}
@@ -2440,7 +2472,7 @@ Tilemap:
   - m_RefCount: 21
     m_Data: {fileID: -7529744677577844561, guid: 299760b1974ce5542b0197a9934fddec,
       type: 3}
-  - m_RefCount: 47
+  - m_RefCount: 44
     m_Data: {fileID: 466881852766552214, guid: 299760b1974ce5542b0197a9934fddec, type: 3}
   - m_RefCount: 16
     m_Data: {fileID: 7180856405290789048, guid: 299760b1974ce5542b0197a9934fddec,
@@ -2456,6 +2488,15 @@ Tilemap:
       type: 3}
   - m_RefCount: 19
     m_Data: {fileID: -2627354424159135342, guid: 299760b1974ce5542b0197a9934fddec,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -3361267694514108388, guid: 5527936777577f445bbdb6cb1ad416a8,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -3324046758758050807, guid: d2614336998e00e408ad56a5e6dc8b15,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -7449198599169858352, guid: c469d6643903c124fa68194c3d035028,
       type: 3}
   m_TileMatrixArray:
   - m_RefCount: 180
@@ -2553,9 +2594,9 @@ MonoBehaviour:
   swampTileWeight: 2
   hillsTileWeight: 5
   mountainTileWeight: 8
-  goatTileWeight: 0
-  boatTileWeight: 0
-  pickTileWeight: 0
+  goatTileWeight: 10
+  boatTileWeight: 10
+  pickTileWeight: 10
 --- !u!4 &1150217719
 Transform:
   m_ObjectHideFlags: 0

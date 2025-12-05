@@ -68,15 +68,15 @@ public class TilemapGraphDijkstra : MonoBehaviour, IWeightedGraph<Vector3Int>
     private float GetTileCost(TileBase tile)
     {
         if (tile == bushTile) return bushTileWeight;
-        if (tile == grassTile) return goatTileWeight;
-        if (tile == swampTile) return shalowWaterTileWeight;
+        if (tile == grassTile) return grassTileWeight;
+        if (tile == swampTile) return swampTileWeight;
         if (tile == hillsTile) return hillsTileWeight;
         if (tile == mountainTile) return mountainTileWeight;
         if (tile == shalowWaterTile) return shalowWaterTileWeight;
-        if (tile == mediumWaterTile) return mountainTileWeight;
+        if (tile == mediumWaterTile) return mediumWaterTileWeight;
         if (tile == deepWaterTile) return deepWaterTileWeight;
         if (tile == goatTile) return goatTileWeight;
-        if (tile == boatTile) return bushTileWeight;
+        if (tile == boatTile) return boatTileWeight;
         if (tile == pickTile) return pickTileWeight;
         return 1f;
     }
