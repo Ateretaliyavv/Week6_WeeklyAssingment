@@ -3,6 +3,24 @@
 A project with step-by-step scenes illustrating how to construct a 2D scene using tilemaps,
 and how to do path-finding using the BFS algorithm.
 
+## Two changes were added to the original game:
+
+1. We added the following items to the map:
+
+    - A boat – when the player collects it, they can sail on water.
+
+    - A goat – when the player collects it, they can climb mountains.
+
+    - A pickaxe – when the player collects it, they can mine mountains and turn them into grass.
+
+2. Instead of the BFS algorithm, we implemented Dijkstra’s algorithm to find paths in a weighted graph. We modified the game so that the player’s movement speed depends on the tiles they walk on; for example, walking on hills or through bushes is slower than walking on grass. We used the algorithm we developed to find the fastest path rather than the shortest path.
+
+**Game Instructions:**
+
+To move the player, you can click on the desired location with the mouse or use the arrow keys to guide the player as you choose.
+
+## Itch.io link: https://ateretaliya.itch.io/week6-weeklyassingment
+
 Text explanations are available 
 [here](https://github.com/gamedev-at-ariel/gamedev-5782) in folder 07.
 
@@ -26,3 +44,5 @@ Procedural generation:
 
 Programming:
 * Erel Segal-Halevi
+* Ateret Cohen
+* Teliya Vallerstein
