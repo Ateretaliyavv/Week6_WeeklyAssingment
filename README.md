@@ -13,7 +13,9 @@ and how to do path-finding using the BFS algorithm.
 
     - A pickaxe – when the player collects it, they can mine mountains and turn them into grass.
 
-2. Instead of the BFS algorithm, we implemented Dijkstra’s algorithm to find paths in a weighted graph. We modified the game so that the player’s movement speed depends on the tiles they walk on; for example, walking on hills or through bushes is slower than walking on grass. We used the algorithm we developed to find the fastest path rather than the shortest path.
+2. Instead of using the DFS algorithm, we implemented Dijkstra’s algorithm to find a fast route in a weighted graph.
+Each type of tile has a speed value according to its terrain; for example, walking on mountains is slower than walking on hills, walking on grass is faster than walking on swamp, and shallow water is slower than deep water.
+So instead of the shortest path chosen by DFS, Dijkstra will choose the fastest path.
 
 **Game Instructions:**
 
